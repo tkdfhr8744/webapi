@@ -15,6 +15,7 @@ namespace webapi.Modules
             string user="root";
             string pwd="1234";
             string db="test";
+            string a="";
             
              string connStr = string.Format(@"server={0};user={1};password={2};database={3}", host, user, pwd, db);
 
