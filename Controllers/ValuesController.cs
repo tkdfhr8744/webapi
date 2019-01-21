@@ -18,7 +18,7 @@ namespace webapi.Controllers
         public ActionResult<ArrayList> Get()
         {
             Mysql my=new Mysql();
-            string sql="select * from test;";
+            string sql="select * from Member;";
             ArrayList list=new ArrayList();
             MySqlDataReader sdr= my.Reader(sql);
             while(sdr.Read())
