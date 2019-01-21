@@ -11,13 +11,12 @@ namespace webapi.Modules
                this.conn=GetConnection();
         }
         private MySqlConnection GetConnection(){
-            string host ="192.168.3.36";
+            string host ="192.168.3.118";
             string user="root";
             string pwd="1234";
             string db="test";
-            string a="";
             
-             string connStr = string.Format(@"server={0};user={1};password={2};database={3}", host, user, pwd, db);
+            string connStr = string.Format(@"server={0};user={1};password={2};database={3}", host, user, pwd, db);
 
             MySqlConnection conn=new MySqlConnection(connStr);
 
@@ -51,7 +50,7 @@ namespace webapi.Modules
             {
                 if (conn!=null)
                 {
-
+                    Console.WriteLine("22");
                     MySqlCommand comm = new MySqlCommand(sql, conn);
                     comm.ExecuteNonQuery();
                     return true;
@@ -59,11 +58,13 @@ namespace webapi.Modules
                 }
                 else
                 {
+                    Console.WriteLine("33");
                     return false;
                 }
             }
             catch
             {
+                Console.WriteLine("44");
                 return false;
             }
         }
